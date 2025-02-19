@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Project Coordinates -->
+    <groupId>com.example</groupId>      <!-- Change as per your package -->
+    <artifactId>add-two-numbers</artifactId>
+    <version>1.0.0</version>
+
+    <!-- Dependencies -->
+    <dependencies>
+        <!-- JUnit for testing -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Build Plugins -->
+    <build>
+        <plugins>
+            <!-- Plugin to run the main class -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <mainClass>AddTwoNumbers</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
