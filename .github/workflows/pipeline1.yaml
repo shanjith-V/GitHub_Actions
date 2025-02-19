@@ -1,7 +1,10 @@
 name:CI/CD pipeline
 
 
-on: [push]  # get notified for every commit 
+on: 
+    push:
+         branches:
+                   -main # get notified for every commit 
 
 jobs:
    build:
