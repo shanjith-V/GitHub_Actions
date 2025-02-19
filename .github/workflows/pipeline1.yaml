@@ -1,0 +1,23 @@
+name:CI/CD pipeline
+
+
+on: [push]  # get notified for every commit 
+
+jobs:
+   build:
+       runs-on: ubuntu-latest 
+       steps:
+          - name: Checkout the code from repo
+            uses: actions/checkout@v3 # fetch the code from repo
+          - name: setup JDK
+             run: actions/setup-java@v3
+
+          - name: build
+             run: mvn clean install
+          - name: run
+             run: mvn exec:java -Dexec.mainClass="AddTwoNumbers"
+          - name: test
+             run: |
+                   mvn clean compile 
+                   javac src/main/java/AddTwoNumbers.java
+                   java -cp src/main/java AddTwoNumbers 
