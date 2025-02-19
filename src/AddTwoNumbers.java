@@ -1,4 +1,3 @@
-//java example for pipeline321
 public class AddTwoNumbers {
 
     // Method to add two numbers
@@ -6,24 +5,39 @@ public class AddTwoNumbers {
         return a + b;
     }
 
-    // Main method to run the application
+    // Main method to run the application and test cases
     public static void main(String[] args) {
+        // Running the program
         int num1 = 5;
         int num2 = 10;
         int sum = add(num1, num2);
-
         System.out.println("The sum of " + num1 + " and " + num2 + " is: " + sum);
 
-        // Call the test method to verify the logic
+        // Running tests inside the same file
         testAdd();
     }
 
-    // Basic Test Method (using assertions)
+    // Method to test the addition function
     public static void testAdd() {
-        assert add(1, 2) == 3 : "Test failed: 1 + 2 should be 3";
-        assert add(1, -1) == 0 : "Test failed: 1 + (-1) should be 0";
-        assert add(3, 4) == 7 : "Test failed: 3 + 4 should be 7";
+        boolean allTestsPassed = true;
 
-        System.out.println("All tests passed!");
+        if (add(1, 2) != 3) {
+            System.out.println("Test Failed: 1 + 2 should be 3");
+            allTestsPassed = false;
+        }
+        if (add(1, -1) != 0) {
+            System.out.println("Test Failed: 1 + (-1) should be 0");
+            allTestsPassed = false;
+        }
+        if (add(3, 4) != 7) {
+            System.out.println("Test Failed: 3 + 4 should be 7");
+            allTestsPassed = false;
+        }
+
+        if (allTestsPassed) {
+            System.out.println("All tests passed successfully!");
+        } else {
+            System.exit(1);  // Exit with error if any test fails
+        }
     }
 }
