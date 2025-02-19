@@ -27,5 +27,5 @@ jobs:
           - name: test
             run: |
                    mvn clean compile 
-                   javac src/main/java/AddTwoNumbers.java
-                   java -cp src/main/java AddTwoNumbers
+                   javac src/AddTwoNumbers.java
+                   java -cp src/java AddTwoNumbers
