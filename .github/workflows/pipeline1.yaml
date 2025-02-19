@@ -8,7 +8,7 @@ jobs:
        runs-on: ubuntu-latest 
        steps:
           - name: Checkout the code from repo
-            uses: actions/checkout@v3 # fetch the code from repo
+          - uses: actions/checkout@v3 # fetch the code from repo
           - name: setup JDK
             uses: actions/setup-java@v3
             with: 
