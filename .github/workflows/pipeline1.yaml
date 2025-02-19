@@ -16,16 +16,15 @@ jobs:
             with: 
               java-version: '17'        # Specifies Java version
               distribution: 'temurin'   # Uses Eclipse Temurin distribution
-              cache: maven     
+                   
           
-          - name: build
-            run: mvn clean install
+          - name: compile
+            run: javac src/AddTwoNumbers.java
           
           - name: run
-            run: mvn exec:java -Dexec.mainClass="AddTwoNumbers"
+            run: java -cp src AddTwoNumbers
           
           - name: test
             run: |
-                   mvn clean compile 
-                   javac src/AddTwoNumbers.java
-                   java -cp src/java AddTwoNumbers
+                   javac -cp . src/AddTwoNumbers.java
+                   java -cp . org.junit.runner.JUnitCore AddTwoNumbers
